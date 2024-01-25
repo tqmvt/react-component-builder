@@ -1,5 +1,4 @@
-import React, { useState } from "react";
-import { Badge, Box, Card, Flex } from "@chakra-ui/react";
+import React from "react";
 import { RenderItem } from "./Item";
 
 interface RenderProps {
@@ -7,10 +6,16 @@ interface RenderProps {
 }
 export const Render = ({ components }: RenderProps) => {
   return (
-    <Card height="700px" p="6" overflow="auto" bgColor="#F9FAFD" mt={3}>
+    <div
+      style={{
+        padding: "1.5rem",
+        backgroundColor: "#F9FAFD",
+        marginTop: "0.75rem",
+      }}
+    >
       {components.map((component, index) => {
         return <RenderItem item={component} key={index} />;
       })}
-    </Card>
+    </div>
   );
 };

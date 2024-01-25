@@ -1,6 +1,8 @@
 import React from "react";
-import { Text } from "@chakra-ui/react";
-import { PageEditorComponentsType, PageEditorSpacerTypes } from "../../../types/page-editor";
+import {
+  PageEditorComponentsType,
+  PageEditorSpacerTypes,
+} from "../../../types/page-editor";
 import { HtmlImage } from "../../Image";
 import { PAGE_EDITOR_SPACER_VALUES } from "../../../constants";
 
@@ -10,13 +12,15 @@ interface ItemProps {
 export const RenderItem = ({ item }: ItemProps) => {
   if (item.type === PageEditorComponentsType.text) {
     return (
-      <Text
-        fontWeight="semibold"
-        fontSize={item.settings?.fontSize}
-        textAlign={item.settings?.textIndentation || "left"}
+      <div
+        style={{
+          fontWeight: "bold",
+          fontSize: item.settings?.fontSize,
+          textAlign: item.settings?.textIndentation || "left",
+        }}
       >
         {item.content}
-      </Text>
+      </div>
     );
   } else if (item.type === PageEditorComponentsType.image) {
     return (
@@ -29,13 +33,9 @@ export const RenderItem = ({ item }: ItemProps) => {
     );
   } else if (item.type === PageEditorComponentsType.spacer) {
     return (
-      <Text
-        pt={item.settings?.spacerHeight}
-        justifyContent="space-between"
-        align="justify"
-      >
+      <div style={{ paddingTop: item.settings?.spacerHeight }}>
         {PAGE_EDITOR_SPACER_VALUES[item.content as PageEditorSpacerTypes]}
-      </Text>
+      </div>
     );
   }
 

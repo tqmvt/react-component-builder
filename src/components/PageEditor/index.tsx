@@ -1,5 +1,4 @@
-import React, { useState } from "react";
-import { Card, Flex } from "@chakra-ui/react";
+import React from "react";
 import { Render } from "./Render";
 
 interface PageEditorProps {
@@ -7,8 +6,10 @@ interface PageEditorProps {
 }
 export const PageEditor = ({ components }: PageEditorProps) => {
   return (
-    <Flex justifyContent="center" mt={5} gap={3}>
+    <div
+      style={{ justifyContent: "center", marginTop: "1.25rem", gap: "0.75rem" }}
+    >
       <Render components={components} />
-    </Flex>
+    </div>
   );
 };
