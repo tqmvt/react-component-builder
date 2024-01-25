@@ -7,10 +7,8 @@ interface PageEditorProps {
 }
 export const PageEditor = ({ components }: PageEditorProps) => {
   return (
-    <>
-      <Flex justifyContent="center" mt={5} gap={3}>
-        <Render components={components} />
-      </Flex>
-    </>
+    <Flex justifyContent="center" mt={5} gap={3}>
+      <Render components={components} />
+    </Flex>
   );
 };

@@ -39,5 +39,5 @@ export const RenderItem = ({ item }: ItemProps) => {
     );
   }
 
-  return <></>;
+  return null;
 };
