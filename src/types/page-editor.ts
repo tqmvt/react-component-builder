@@ -1,13 +1,13 @@
 export enum PageEditorTextSizeOptions {
+  "14px" = "14px",
   "18px" = "18px",
   "24px" = "24px",
-  "48px" = "48px",
 }
 
 export enum PageEditorSpacerHeightOptions {
-  "18px" = "18px",
-  "24px" = "24px",
-  "48px" = "48px",
+  "18px" = "18",
+  "24px" = "24",
+  "48px" = "48",
 }
 
 export enum PageEditorTextIndentationOptions {
@@ -18,9 +18,9 @@ export enum PageEditorTextIndentationOptions {
 
 export enum PageEditorSpacerTypes {
   "empty" = "empty",
-  "dot" = "dot",
-  "dash" = "dash",
-  "asterisk" = "asterisk",
+  "dotted" = "dotted",
+  "dashed" = "dashed",
+  "solid" = "solid",
 }
 
 export enum PageEditorComponentsType {

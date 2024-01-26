@@ -1,6 +1,6 @@
 {
   "name": "react-component-renderer",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "type": "module",
   "source": "src/index.ts",
   "main": "dist/index.cjs",
@@ -23,12 +23,20 @@
     "microbundle": "^0.15.1",
     "typescript": "^5.3.3"
   },
+  "dependencies": {
+    "classnames": "^2.5.1",
+    "react": "^18.2.0"
+  },
   "repository": {
     "type": "git",
     "url": "git@github.com:tqmvt/react-component-builder.git"
   },
-  "dependencies": {
-    "classnames": "^2.5.1",
-    "react": "^18.2.0"
-  }
+  "keywords": [
+    "renderer",
+    "react",
+    "component",
+    "page-builder"
+  ],
+  "author": "tqmvt",
+  "license":"MIT"
 }

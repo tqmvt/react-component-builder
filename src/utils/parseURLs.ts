@@ -13,7 +13,5 @@ export const getImageUrl = (url: string) => {
 
   return isExternalUrl(url)
     ? url
-    : `${String(
-      process.env.NEXT_PUBLIC_IMAGE_STORAGE_API
-    )}/${url}`;
+    : `${String(process.env.NEXT_PUBLIC_IMAGE_STORAGE_API)}/${url}`;
 };

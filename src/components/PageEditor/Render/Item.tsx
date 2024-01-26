@@ -2,9 +2,9 @@ import React from "react";
 import {
   PageEditorComponentsType,
   PageEditorSpacerTypes,
+  PageEditorTextSizeOptions,
 } from "../../../types/page-editor";
 import { HtmlImage } from "../../Image";
-import { PAGE_EDITOR_SPACER_VALUES } from "../../../constants";
 
 interface ItemProps {
   item: ComponentSection;
@@ -14,7 +14,10 @@ export const RenderItem = ({ item }: ItemProps) => {
     return (
       <div
         style={{
-          fontWeight: "bold",
+          fontWeight:
+            item.settings?.fontSize === PageEditorTextSizeOptions["14px"]
+              ? "normal"
+              : "bold",
           fontSize: item.settings?.fontSize,
           textAlign: item.settings?.textIndentation || "left",
         }}
@@ -33,8 +36,24 @@ export const RenderItem = ({ item }: ItemProps) => {
     );
   } else if (item.type === PageEditorComponentsType.spacer) {
     return (
-      <div style={{ paddingTop: item.settings?.spacerHeight }}>
-        {PAGE_EDITOR_SPACER_VALUES[item.content as PageEditorSpacerTypes]}
+      <div
+        style={{
+          paddingTop: `${Number(item.settings?.spacerHeight) / 2}px`,
+          paddingBottom: `${Number(item.settings?.spacerHeight) / 2}px`,
+        }}
+      >
+        {(item.content === (PageEditorSpacerTypes.dashed as string) ||
+          item.content === (PageEditorSpacerTypes.dotted as string) ||
+          item.content === (PageEditorSpacerTypes.solid as string)) && (
+          <hr
+            style={{
+              borderColor: "black",
+              borderStyle: item.content,
+              opacity: "1",
+              margin: 0,
+            }}
+          />
+        )}
       </div>
     );
   }
