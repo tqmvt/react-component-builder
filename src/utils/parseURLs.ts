@@ -1,5 +1,3 @@
-import { PLACEHOLDER_IMAGE } from "../constants";
-
 export const isExternalUrl = (url: string) => {
   if (!url) return false;
 
@@ -8,10 +6,12 @@ export const isExternalUrl = (url: string) => {
   return hasHttpOrHttps;
 };
 
-export const getImageUrl = (url: string) => {
-  if (!url) return PLACEHOLDER_IMAGE;
+export const getImageUrl = (
+  imageUrl: string,
+  apiUrl: string,
+  placeholderImageUrl: string
+) => {
+  if (!imageUrl) return placeholderImageUrl;
 
-  return isExternalUrl(url)
-    ? url
-    : `${String(process.env.NEXT_PUBLIC_IMAGE_STORAGE_API)}/${url}`;
+  return isExternalUrl(imageUrl) ? imageUrl : `${apiUrl}/${imageUrl}`;
 };

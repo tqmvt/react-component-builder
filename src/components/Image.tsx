@@ -11,6 +11,8 @@ interface IAssetImageProps {
   alt?: string;
   fill?: boolean;
   rounded?: boolean;
+  apiUrl: string;
+  placeholderImageUrl: string;
 }
 
 export const HtmlImage = ({
@@ -21,12 +23,16 @@ export const HtmlImage = ({
   alt = "Image",
   fill,
   rounded,
+  apiUrl,
+  placeholderImageUrl,
   ...props
 }: IAssetImageProps) => {
-  const [source, setSource] = useState(getImageUrl(src));
+  const [source, setSource] = useState(
+    getImageUrl(src, apiUrl, placeholderImageUrl)
+  );
 
   useEffect(() => {
-    setSource(getImageUrl(src));
+    setSource(getImageUrl(src, apiUrl, placeholderImageUrl));
   }, [src]);
 
   return (

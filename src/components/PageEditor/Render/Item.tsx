@@ -7,9 +7,15 @@ import {
 import { HtmlImage } from "../../Image";
 
 interface ItemProps {
+  apiUrl: string;
   item: ComponentSection;
+  placeholderImageUrl: string;
 }
-export const RenderItem = ({ item }: ItemProps) => {
+export const RenderItem = ({
+  apiUrl,
+  item,
+  placeholderImageUrl,
+}: ItemProps) => {
   if (item.type === PageEditorComponentsType.text) {
     return (
       <div
@@ -32,6 +38,8 @@ export const RenderItem = ({ item }: ItemProps) => {
         width={item.settings?.width}
         height={item.settings?.height}
         alt={item.settings?.imageAltText}
+        apiUrl={apiUrl}
+        placeholderImageUrl={placeholderImageUrl}
       />
     );
   } else if (item.type === PageEditorComponentsType.spacer) {

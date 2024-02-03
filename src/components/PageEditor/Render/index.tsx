@@ -2,9 +2,15 @@ import React from "react";
 import { RenderItem } from "./Item";
 
 interface RenderProps {
+  apiUrl: string;
   components: ComponentSection[];
+  placeholderImageUrl: string;
 }
-export const Render = ({ components }: RenderProps) => {
+export const Render = ({
+  apiUrl,
+  components,
+  placeholderImageUrl,
+}: RenderProps) => {
   return (
     <div
       style={{
@@ -14,7 +20,14 @@ export const Render = ({ components }: RenderProps) => {
       }}
     >
       {components.map((component, index) => {
-        return <RenderItem item={component} key={index} />;
+        return (
+          <RenderItem
+            apiUrl={apiUrl}
+            item={component}
+            placeholderImageUrl={placeholderImageUrl}
+            key={`render_${component.id}_${index}`}
+          />
+        );
       })}
     </div>
   );
