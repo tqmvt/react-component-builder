@@ -1,6 +1,10 @@
+# React Component Renderer
+
+[npm package](https://www.npmjs.com/package/react-component-renderer)
+
 ### How To Use
 
-1. install package
+1. Install package
 
 ```bash
 npm install react-component-renderer
@@ -14,22 +18,26 @@ yarn add react-component-renderer
 pnpm add react-component-renderer
 ```
 
-2. make sure you have env variable in your project
-
-```
-NEXT_PUBLIC_IMAGE_STORAGE_API=""
-```
-
-3. import render component
+2. Import render component
 
 ```typescript
 import { PageEditor } from "react-component-renderer";
 
-<PageEditor components={components} />;
+<PageEditor
+  baseImageUrl={baseImageUrl}
+  components={components}
+  placeholderImageUrl={placeholderImageUrl}
+/>;
 ```
 
-4. example components data
+3. Example component props data
 
+`baseImageUrl`:
+```bash
+https://your-api-domain.com # without slash at the end
+```
+
+`components`:
 ```json
 [
   {
@@ -56,4 +64,10 @@ import { PageEditor } from "react-component-renderer";
     }
   }
 ]
+```
+
+`placeholderImageUrl`:
+
+```bash
+https://your-api-domain.com/placeholder.png # full image url
 ```

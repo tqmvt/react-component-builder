@@ -7,12 +7,12 @@ import {
 import { HtmlImage } from "../../Image";
 
 interface ItemProps {
-  apiUrl: string;
+  baseImageUrl: string;
   item: ComponentSection;
   placeholderImageUrl: string;
 }
 export const RenderItem = ({
-  apiUrl,
+  baseImageUrl,
   item,
   placeholderImageUrl,
 }: ItemProps) => {
@@ -38,7 +38,7 @@ export const RenderItem = ({
         width={item.settings?.width}
         height={item.settings?.height}
         alt={item.settings?.imageAltText}
-        apiUrl={apiUrl}
+        baseImageUrl={baseImageUrl}
         placeholderImageUrl={placeholderImageUrl}
       />
     );

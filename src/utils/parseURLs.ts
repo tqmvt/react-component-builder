@@ -8,10 +8,10 @@ export const isExternalUrl = (url: string) => {
 
 export const getImageUrl = (
   imageUrl: string,
-  apiUrl: string,
+  baseImageUrl: string,
   placeholderImageUrl: string
 ) => {
   if (!imageUrl) return placeholderImageUrl;
 
-  return isExternalUrl(imageUrl) ? imageUrl : `${apiUrl}/${imageUrl}`;
+  return isExternalUrl(imageUrl) ? imageUrl : `${baseImageUrl}/${imageUrl}`;
 };

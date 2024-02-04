@@ -2,27 +2,21 @@ import React from "react";
 import { RenderItem } from "./Item";
 
 interface RenderProps {
-  apiUrl: string;
+  baseImageUrl: string;
   components: ComponentSection[];
   placeholderImageUrl: string;
 }
 export const Render = ({
-  apiUrl,
+  baseImageUrl,
   components,
   placeholderImageUrl,
 }: RenderProps) => {
   return (
-    <div
-      style={{
-        padding: "1.5rem",
-        backgroundColor: "#F9FAFD",
-        marginTop: "0.75rem",
-      }}
-    >
+    <div>
       {components.map((component, index) => {
         return (
           <RenderItem
-            apiUrl={apiUrl}
+            baseImageUrl={baseImageUrl}
             item={component}
             placeholderImageUrl={placeholderImageUrl}
             key={`render_${component.id}_${index}`}

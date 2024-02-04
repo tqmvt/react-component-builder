@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
-
 import classNames from "classnames";
+
 import { getImageUrl } from "../utils/parseURLs";
 
 interface IAssetImageProps {
@@ -11,7 +11,7 @@ interface IAssetImageProps {
   alt?: string;
   fill?: boolean;
   rounded?: boolean;
-  apiUrl: string;
+  baseImageUrl: string;
   placeholderImageUrl: string;
 }
 
@@ -23,16 +23,16 @@ export const HtmlImage = ({
   alt = "Image",
   fill,
   rounded,
-  apiUrl,
+  baseImageUrl,
   placeholderImageUrl,
   ...props
 }: IAssetImageProps) => {
   const [source, setSource] = useState(
-    getImageUrl(src, apiUrl, placeholderImageUrl)
+    getImageUrl(src, baseImageUrl, placeholderImageUrl)
   );
 
   useEffect(() => {
-    setSource(getImageUrl(src, apiUrl, placeholderImageUrl));
+    setSource(getImageUrl(src, baseImageUrl, placeholderImageUrl));
   }, [src]);
 
   return (

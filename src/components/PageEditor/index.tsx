@@ -2,12 +2,12 @@ import React from "react";
 import { Render } from "./Render";
 
 interface PageEditorProps {
-  apiUrl: string;
+  baseImageUrl: string;
   components: ComponentSection[];
   placeholderImageUrl: string;
 }
 export const PageEditor = ({
-  apiUrl,
+  baseImageUrl,
   components,
   placeholderImageUrl,
 }: PageEditorProps) => {
@@ -16,7 +16,7 @@ export const PageEditor = ({
       style={{ justifyContent: "center", marginTop: "1.25rem", gap: "0.75rem" }}
     >
       <Render
-        apiUrl={apiUrl}
+        baseImageUrl={baseImageUrl}
         components={components}
         placeholderImageUrl={placeholderImageUrl}
       />
