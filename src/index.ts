@@ -1,2 +1,4 @@
-export { Button } from "./components/Button";
 export { PageEditor } from "./components/PageEditor";
+
+export type { ComponentSection };
+export type { PageEditorProps } from "./components/PageEditor";

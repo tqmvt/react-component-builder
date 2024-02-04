@@ -3,7 +3,7 @@ import {
   PageEditorComponentsType,
   PageEditorSpacerTypes,
   PageEditorTextSizeOptions,
-} from "../../../types/page-editor";
+} from "../../../types";
 import { HtmlImage } from "../../Image";
 
 interface ItemProps {

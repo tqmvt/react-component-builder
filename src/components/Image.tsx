@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import classNames from "classnames";
 
-import { getImageUrl } from "../utils/parseURLs";
+import { getImageUrl } from "../utils";
 
 interface IAssetImageProps {
   src: string;

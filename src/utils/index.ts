@@ -1,4 +1,4 @@
-export const isExternalUrl = (url: string) => {
+export const isExternalUrl = (url?: string) => {
   if (!url) return false;
 
   const hasHttpOrHttps =
